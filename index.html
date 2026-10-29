@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#211653">
+  <title>FEC Circuit Lab | Circuit Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="FEC Circuit Lab home">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 20h7m14 0h7M13 20a7 7 0 1 1 14 0 7 7 0 0 1-14 0Z"/><path d="M20 13V6m0 28v-7"/></svg></span>
+        <span><strong>FEC Circuit Lab</strong><small>ENGINEERING WORKSPACE</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home"><span class="nav-icon">⌂</span>Overview</button>
+        <button class="nav-item" data-view="analyze"><span class="nav-icon">⌁</span>New analysis</button>
+        <button class="nav-item" data-view="guide"><span class="nav-icon">▤</span>Method guide</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-card">
+          <span class="side-card-icon">✳</span>
+          <strong>Built for learning</strong>
+          <p>Review each step, not just the final number.</p>
+        </div>
+        <div class="course-tag"><span class="status-dot"></span> FEC 203 / 203L</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="crumb-current">Overview</strong></div>
+        <div class="topbar-right"><span class="online-dot"></span><span>Local session</span><span class="avatar">F</span></div>
+      </header>
+
+      <section class="view active" id="view-home">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> CIRCUIT ANALYSIS TOOLKIT</div>
+            <h1>Understand the circuit.<br><span>Trust the process.</span></h1>
+            <p class="hero-text">Solve linear circuit equations with a guided workflow for node-voltage and mesh-current analysis. Enter your system, inspect the solution, and review the power balance.</p>
+            <div class="hero-actions">
+              <button class="btn btn-primary" id="start-analysis">Start an analysis <span>→</span></button>
+              <button class="btn btn-quiet" id="open-guide">Explore the methods</button>
+            </div>
+            <div class="hero-note"><span class="check-ring">✓</span> No account needed · Runs in your browser</div>
+          </div>
+          <div class="hero-art" aria-label="Decorative circuit illustration">
+            <div class="art-glow"></div>
+            <svg viewBox="0 0 420 330" role="img" aria-label="Stylized circuit network">
+              <defs><linearGradient id="wire" x1="0" x2="1"><stop stop-color="#9D8AFF"/><stop offset="1" stop-color="#55D9D0"/></linearGradient></defs>
+              <g fill="none" stroke="url(#wire)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M70 74H170V120H250V74H350V252H270V208H170V252H70Z"/>
+                <path d="M70 74V160H122M350 160H298M210 120V166M210 208V252"/>
+                <path d="M122 160h18l8-12 14 24 14-24 14 24 8-12h20" />
+                <path d="M250 74v18m-12 0h24m-24 10h24m-12 0v18"/>
+                <path d="M70 190h18m0-12v24m10-24v24m0-12h18"/>
+                <path d="M270 208h-16m0-12v24m-10-24v24m0-12h-16"/>
+              </g>
+              <g fill="#211653" stroke="#B8AEFF" stroke-width="2">
+                <circle cx="70" cy="74" r="7"/><circle cx="170" cy="120" r="7"/><circle cx="250" cy="74" r="7"/>
+                <circle cx="350" cy="252" r="7"/><circle cx="170" cy="252" r="7"/><circle cx="70" cy="252" r="7"/>
+                <circle cx="210" cy="166" r="7"/><circle cx="210" cy="208" r="7"/>
+              </g>
+              <g fill="#D8D1FF" font-family="DM Sans, sans-serif" font-size="12" font-weight="700">
+                <text x="52" y="57">N1</text><text x="156" y="103">N2</text><text x="255" y="57">N3</text><text x="356" y="270">GND</text>
+              </g>
+              <g fill="#7E70D8" opacity=".45"><circle cx="45" cy="120" r="2"/><circle cx="380" cy="100" r="3"/><circle cx="320" cy="292" r="2"/><circle cx="120" cy="286" r="3"/><circle cx="290" cy="42" r="2"/></g>
+            </svg>
+            <div class="art-chip chip-one"><span class="chip-dot mint"></span> Node voltage</div>
+            <div class="art-chip chip-two"><span class="chip-dot lilac"></span> Mesh current</div>
+            <div class="art-caption"><span class="caption-mark">∑</span><span><strong>Linear system solver</strong><small>Guided · Transparent · Repeatable</small></span></div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><div class="eyebrow">YOUR WORKFLOW</div><h2>From equations to insight</h2></div><span class="section-aside">A simple, structured process</span></div>
+        <div class="feature-grid">
+          <article class="feature-card"><div class="feature-icon purple">01</div><h3>Choose your approach</h3><p>Start with node voltage or mesh current, then choose how you want to enter your equations.</p><div class="feature-line"></div></article>
+          <article class="feature-card"><div class="feature-icon mint">02</div><h3>Enter the system</h3><p>Set three or more unknowns and fill in the coefficients and constants for your linear system.</p><div class="feature-line"></div></article>
+          <article class="feature-card"><div class="feature-icon amber">03</div><h3>Review the results</h3><p>See the solved variables, elimination steps, element power values, and a power-balance check.</p><div class="feature-line"></div></article>
+        </div>
+        <div class="bottom-banner"><div class="banner-symbol">i</div><div><strong>A note on circuit checks</strong><p>Power balance is a useful consistency check for a complete element list. It does not, by itself, prove dynamic circuit stability.</p></div><button class="text-button" id="banner-guide">Read the guide <span>↗</span></button></div>
+      </section>
+
+      <section class="view" id="view-analyze">
+        <div class="page-heading"><div><div class="eyebrow">ANALYSIS WORKSPACE</div><h1>New circuit analysis</h1><p>Follow the steps in order. You can go back to change your choices at any time.</p></div><div class="step-count"><span id="step-number">STEP 1 OF 4</span><div class="step-track"><i id="step-progress"></i></div></div></div>
+        <div class="wizard-layout">
+          <div class="wizard-main">
+            <div class="wizard-step active" id="step-method">
+              <div class="panel-heading"><span class="step-kicker">01 / METHOD</span><h2>How are you analyzing this circuit?</h2><p>Select the circuit-analysis technique used to derive your equations.</p></div>
+              <div class="choice-grid">
+                <button class="choice-card selected" data-method="node">
+                  <span class="choice-radio"></span><span class="choice-visual"><svg viewBox="0 0 90 70"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 15H78V55H12Z"/><path d="M12 35H34m22 0h22"/><circle cx="45" cy="15" r="4" fill="currentColor"/><circle cx="45" cy="55" r="4" fill="currentColor"/><path d="M34 35l5-8 12 16 5-8"/></g></svg></span>
+                  <strong>Node Voltage Method</strong><span class="choice-description">Find node voltages relative to a reference node using KCL.</span><span class="choice-meta">KIRCHHOFF'S CURRENT LAW</span>
+                </button>
+                <button class="choice-card" data-method="mesh">
+                  <span class="choice-radio"></span><span class="choice-visual"><svg viewBox="0 0 90 70"><g fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15H75V55H15Z"/><path d="M45 15V55"/><path d="M29 35a16 16 0 1 1 32 0"/><path d="M54 29l7 6-1-9"/></g></svg></span>
+                  <strong>Mesh Current Method</strong><span class="choice-description">Find loop currents by applying KVL around independent meshes.</span><span class="choice-meta">KIRCHHOFF'S VOLTAGE LAW</span>
+                </button>
+              </div>
+              <div class="form-footer"><span class="muted">You can change this later.</span><button class="btn btn-primary" id="to-format">Continue <span>→</span></button></div>
+            </div>
+
+            <div class="wizard-step" id="step-format">
+              <div class="panel-heading"><span class="step-kicker">02 / INPUT FORMAT</span><h2>How will you enter the equations?</h2><p>Both formats represent the same linear system, <span class="math-inline">Ax = b</span>.</p></div>
+              <div class="format-options">
+                <button class="format-card selected" data-format="equations"><span class="format-icon">≡</span><span><strong>System of equations</strong><small>See each equation written in expanded form.</small></span><span class="format-check">✓</span></button>
+                <button class="format-card" data-format="matrix"><span class="format-icon">▦</span><span><strong>Matrix notation</strong><small>Enter the coefficient matrix A and constants vector b.</small></span><span class="format-check">✓</span></button>
+              </div>
+              <div class="field-block"><label for="unknown-count">Number of unknowns</label><div class="select-wrap"><select id="unknown-count"><option value="3">3 unknowns</option><option value="4">4 unknowns</option><option value="5">5 unknowns</option><option value="6">6 unknowns</option><option value="7">7 unknowns</option><option value="8">8 unknowns</option></select><span>⌄</span></div><small>At least 3 unknowns are required by the project instructions. Use up to 8 for this version.</small></div>
+              <div class="form-footer"><button class="btn btn-quiet" data-back="method">← Back</button><button class="btn btn-primary" id="to-input">Build input form <span>→</span></button></div>
+            </div>
+
+            <div class="wizard-step" id="step-input">
+              <div class="panel-heading"><span class="step-kicker">03 / EQUATION INPUT</span><h2 id="input-title">Enter your coefficients</h2><p id="input-subtitle">Use the values from your circuit equations. All fields accept integers or decimals.</p></div>
+              <div class="input-toolbar"><div><span class="input-mode-badge" id="input-mode-badge">SYSTEM OF EQUATIONS</span><span class="input-method-label" id="input-method-label">Node voltage</span></div><button class="text-button" id="load-example">Load sample system ↻</button></div>
+              <div class="matrix-intro" id="matrix-intro"><span class="matrix-symbol">A</span><span>Coefficient matrix</span><span class="matrix-times">×</span><span class="matrix-symbol">x</span><span class="matrix-equals">=</span><span class="matrix-symbol">b</span></div>
+              <div id="equation-input" class="equation-input"></div>
+              <div class="input-note"><span class="note-icon">i</span><span>Make sure the equations are independent and correctly arranged. A singular system cannot produce one unique solution.</span></div>
+              <div class="form-footer"><button class="btn btn-quiet" data-back="format">← Back</button><button class="btn btn-primary" id="solve-system">Solve system <span>→</span></button></div>
+              <div class="error-message" id="input-error" role="alert"></div>
+            </div>
+
+            <div class="wizard-step" id="step-results">
+              <div class="results-topline"><div><span class="step-kicker">04 / SOLUTION</span><h2>Your analysis results</h2><p id="results-description">Review the calculated unknowns and the numerical checks.</p></div><button class="btn btn-outline" id="new-analysis">＋ New analysis</button></div>
+              <div class="result-status" id="result-status"><span class="status-icon">✓</span><span><strong>Unique solution found</strong><small>The coefficient matrix is nonsingular.</small></span><span class="status-pill">SOLVED</span></div>
+              <div class="results-section"><div class="results-section-head"><div><h3>Calculated unknowns</h3><p>Values are shown in the selected method's variable convention.</p></div><button class="text-button" id="copy-results">Copy values ⧉</button></div><div class="solution-grid" id="solution-grid"></div></div>
+              <div class="results-section"><div class="results-section-head"><div><h3>Elimination walkthrough</h3><p>Row operations used to solve the linear system.</p></div><button class="text-button" id="toggle-steps">Show steps ↓</button></div><div class="steps-panel collapsed" id="steps-panel"></div></div>
+              <div class="results-section">
+                <div class="results-section-head"><div><h3>Element power table</h3><p>Enter each element's voltage and current using the passive sign convention.</p></div><button class="text-button" id="add-element">＋ Add element</button></div>
+                <div class="table-wrap"><table class="power-table"><thead><tr><th>Element</th><th>Voltage (V)</th><th>Current (A)</th><th>Power absorbed (W)</th><th>Power delivered (W)</th><th></th></tr></thead><tbody id="element-rows"></tbody></table></div>
+                <div class="power-summary" id="power-summary"><div><span>Total absorbed</span><strong id="total-absorbed">0.000 W</strong></div><div><span>Total delivered</span><strong id="total-delivered">0.000 W</strong></div><div><span>Power difference</span><strong id="power-difference">0.000 W</strong></div></div>
+                <div class="balance-status" id="balance-status"><span class="balance-dot"></span><span><strong>Power check pending</strong><small>Add the voltage and current for each element in your circuit.</small></span></div>
+              </div>
+              <div class="results-footer"><p><strong>Remember:</strong> a balanced power table supports conservation-of-energy consistency, but it does not establish dynamic stability on its own.</p><button class="btn btn-primary" id="export-report">Export report ↓</button></div>
+            </div>
+          </div>
+          <aside class="wizard-aside">
+            <div class="aside-card progress-card"><div class="aside-card-title"><span class="mini-icon">✳</span><strong>Your progress</strong></div><div class="progress-list"><div class="progress-item current" data-progress="method"><span class="progress-number">1</span><span><strong>Choose method</strong><small>Node or mesh</small></span><span class="progress-check">✓</span></div><div class="progress-item" data-progress="format"><span class="progress-number">2</span><span><strong>Choose input format</strong><small>Equations or matrix</small></span><span class="progress-check">✓</span></div><div class="progress-item" data-progress="input"><span class="progress-number">3</span><span><strong>Enter values</strong><small>Build the linear system</small></span><span class="progress-check">✓</span></div><div class="progress-item" data-progress="results"><span class="progress-number">4</span><span><strong>Review results</strong><small>Solution and power check</small></span><span class="progress-check">✓</span></div></div></div>
+            <div class="aside-card method-card"><div class="aside-card-title"><span class="mini-icon violet">⌁</span><strong id="aside-method-title">Node voltage method</strong></div><p id="aside-method-text">Use KCL at non-reference nodes. Unknowns are typically node voltages measured relative to ground.</p><div class="aside-rule"></div><div class="aside-equation" id="aside-equation">Σ I entering = Σ I leaving</div></div>
+            <div class="aside-card tip-card"><span class="tip-icon">✦</span><div><strong>Quick tip</strong><p id="aside-tip">Use a consistent current direction and reference node when forming your equations.</p></div></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-guide">
+        <div class="page-heading"><div><div class="eyebrow">REFERENCE DESK</div><h1>Method guide</h1><p>A quick refresher before you build your system of equations.</p></div></div>
+        <div class="guide-grid">
+          <article class="guide-card"><div class="guide-symbol purple">V</div><div class="guide-label">METHOD 01</div><h2>Node Voltage Method</h2><p>Choose a reference node (ground), assign voltages to the remaining essential nodes, then apply Kirchhoff's Current Law (KCL).</p><div class="guide-equation">Σ I = 0 <small>at each non-reference node</small></div><h3>Useful when</h3><ul><li>The circuit has fewer essential nodes than independent meshes.</li><li>Many branches share the same reference node.</li><li>Node voltages are the values you need to find.</li></ul></article>
+          <article class="guide-card"><div class="guide-symbol mint">I</div><div class="guide-label">METHOD 02</div><h2>Mesh Current Method</h2><p>Assign a current to each independent mesh and apply Kirchhoff's Voltage Law (KVL) around each loop.</p><div class="guide-equation">Σ V = 0 <small>around each independent mesh</small></div><h3>Useful when</h3><ul><li>The circuit is planar and has fewer meshes than essential nodes.</li><li>Branch currents are the main values you need.</li><li>Voltage sources make loop equations straightforward.</li></ul></article>
+          <article class="guide-card guide-wide"><div class="guide-symbol amber">Ax</div><div class="guide-label">THE MATHEMATICS</div><h2>Solving a linear system</h2><p>Both methods can be represented as <strong>Ax = b</strong>, where A contains coefficients, x contains unknowns, and b contains constants. The solver uses Gaussian elimination with partial pivoting.</p><div class="math-cards"><div><strong>A</strong><span>Coefficient matrix</span></div><div><strong>x</strong><span>Unknown vector</span></div><div><strong>b</strong><span>Constants vector</span></div></div><h3>How to read the result</h3><ul><li><strong>Unique solution:</strong> one value for every unknown.</li><li><strong>Singular system:</strong> equations are dependent or inconsistent; a unique solution cannot be returned.</li><li><strong>Power balance:</strong> for a complete list of elements, total absorbed power should approximately equal total delivered power.</li></ul></article>
+        </div>
+        <div class="guide-footer"><span>FEC 203 / 203L · Circuit analysis</span><button class="btn btn-primary" id="guide-start">Start an analysis <span>→</span></button></div>
+      </section>
+
+      <footer class="app-footer"><span>FEC Circuit Lab <span class="footer-dot">·</span> Learning tool for circuit analysis</span><span>All calculations run locally in your browser.</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
